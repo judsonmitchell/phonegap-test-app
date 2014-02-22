@@ -43,12 +43,16 @@
             </div>
         </div>
         <div id="sidr">
-            <ul>
-                <li><a href="#">List 1</a></li>
-                <li class="active"><a href="#">List 2</a></li>
-                <li><a href="#">List 3</a></li>
+            <ul class="app-nav">
+                <li><a href="entry-template">Main</a></li>
+                <li class="active"><a href="second-template">Second</a></li>
+                <li><a href="settings-template">Settings</a></li>
             </ul>
         </div>
+        <div class="container container-content">
+        </div>
+        </div>
+        <script id="entry-template" type="text/x-handlebars-template">
         <div class="panel panel-default">
             <div class="panel-heading"><a href="#" class="pull-right">Help</a><h4>Save to DB</h4></div>
             <div class="panel-body">
@@ -65,12 +69,49 @@
                     </form> 
             </div>
         </div>
+        </script>
+        <script id="second-template" type="text/x-handlebars-template">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="#" class="pull-right">Help</a><h4>Second</h4></div>
+            <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputName">Your Name</label>
+                            <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form> 
+            </div>
         </div>
+        </script>
+        <script id="settings-template" type="text/x-handlebars-template">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="#" class="pull-right">Help</a><h4>Settings</h4></div>
+            <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="exampleInputName">Your Name</label>
+                            <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                    </form> 
+            </div>
+        </div>
+        </script>
         <!-- <script type="text/javascript" src="phonegap.js"></script> -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
         <script type="text/javascript" src="js/jquery.sidr.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/handlebars.min.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>

@@ -50,4 +50,16 @@ var app = {
 
 $(document).ready(function() {
     $('#simple-menu').sidr();
+    var source   = $('#entry-template').html();
+    var template = Handlebars.compile(source);
+    $('.container-content').html(template);
+
+    $('ul.app-nav a').click(function (e) {
+        e.preventDefault();
+        var target = $(this).attr('href');
+        var source = $('#' + target).html();
+        var template = Handlebars.compile(source);
+        $('.container-content').html(template);
+        $.sidr('close');
+    });
 });
