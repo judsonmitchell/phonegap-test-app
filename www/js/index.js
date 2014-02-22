@@ -54,6 +54,7 @@ $(document).ready(function() {
     var source   = $('#entry-template').html();
     var template = Handlebars.compile(source);
     $('.container-content').html(template);
+    $.bbq.pushState({ url: 'entry-template' });
 
     //Handle Navigation
     $('ul.app-nav a').click(function (e) {
@@ -62,6 +63,7 @@ $(document).ready(function() {
         var source = $('#' + target).html();
         var template = Handlebars.compile(source);
         $('.container-content').html(template);
+        $.bbq.pushState({ url: target });
         $.sidr('close');
     });
 
