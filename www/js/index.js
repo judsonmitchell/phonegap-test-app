@@ -62,4 +62,16 @@ $(document).ready(function() {
         $('.container-content').html(template);
         $.sidr('close');
     });
+    $(window).touchwipe({
+        wipeLeft: function() {
+            // Close
+            $.sidr('close');
+        },
+        wipeRight: function() {
+            // Open
+            $.sidr('open');
+        },
+        preventDefaultEvents: false
+    });
 });
+
