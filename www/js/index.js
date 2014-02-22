@@ -49,11 +49,13 @@ var app = {
 };
 
 $(document).ready(function() {
+    //Load
     $('#simple-menu').sidr();
     var source   = $('#entry-template').html();
     var template = Handlebars.compile(source);
     $('.container-content').html(template);
 
+    //Handle Navigation
     $('ul.app-nav a').click(function (e) {
         e.preventDefault();
         var target = $(this).attr('href');
@@ -62,6 +64,8 @@ $(document).ready(function() {
         $('.container-content').html(template);
         $.sidr('close');
     });
+
+    //Handle swipes on menu
     $(window).touchwipe({
         wipeLeft: function() {
             // Close
@@ -72,6 +76,11 @@ $(document).ready(function() {
             $.sidr('open');
         },
         preventDefaultEvents: false
+    });
+
+    //Toggle settings buttons
+    $('.btn-toggle').click(function() {
+        $(this).find('.btn').toggleClass('active').toggleClass('btn-default').toggleClass('btn-primary');
     });
 });
 
