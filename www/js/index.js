@@ -79,7 +79,7 @@ $(document).ready(function() {
     });
 
     //Toggle settings buttons
-    $('.btn-toggle').click(function() {
+    $('.container-content').on('click', '.btn-toggle',function() {
         $(this).find('.btn').toggleClass('active').toggleClass('btn-default').toggleClass('btn-primary');
     });
 });
