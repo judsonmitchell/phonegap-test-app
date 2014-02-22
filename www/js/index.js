@@ -47,3 +47,7 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+$(document).ready(function() {
+    $('#simple-menu').sidr();
+});
