@@ -24,8 +24,8 @@ $(function(){
         // In this example, whenever the event is triggered, iterate over
         // all `a` elements, setting the class to 'current' if the
         // href matches (and removing it otherwise).
-        $('a').each(function(){
-            var href = $(this).attr( 'href' );
+        $('ul.app-nav li').each(function(){
+            var href = $(this).children('a').attr( 'href' );
 
             if ( href === url ) {
                 $(this).addClass( 'active' );
