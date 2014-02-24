@@ -50,6 +50,7 @@
             </ul>
         </div>
         <div class="container container-content">
+            <!-- Handlebars compiled templates go here -->
         </div>
         </div>
         <script id="entry-template" type="text/x-handlebars-template">
@@ -59,14 +60,26 @@
                     <form role="form">
                         <div class="form-group">
                             <label for="exampleInputName">Your Name</label>
-                            <input type="text" class="form-control" id="exampleInputName" placeholder="Name">
+                            <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Name">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                     </form> 
+            </div>
+        </div>
+        </script>
+        <script id="results-template" type="text/x-handlebars-template">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="#" class="pull-right">Help</a><h4>Results</h4></div>
+            <div class="panel-body">
+                <div class="list-group">
+                    {{#each objects}}
+                        <a href="#" class="list-group-item">{{name}} - {{email}}</a>
+                    {{/each}}
+                </div>
             </div>
         </div>
         </script>

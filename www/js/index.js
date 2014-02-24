@@ -84,5 +84,20 @@ $(document).ready(function() {
     $('.container-content').on('click', '.btn-toggle',function() {
         $(this).find('.btn').toggleClass('active').toggleClass('btn-default').toggleClass('btn-primary');
     });
+
+
+    //Submit form
+    $('.container-content').on('submit', 'form', function (e) {
+        e.preventDefault();
+        var items = $(this).serializeArray();
+        $.post('http://loyolalawtech.org:3000/resources', items, function () {
+            $.bbq.pushState({ url: 'results-template' });
+            $.get('http://loyolalawtech.org:3000/resources', function (data) {
+                var source   = $('#results-template').html();
+                var template = Handlebars.compile(source);
+                $('.container-content').html(template({objects: data}));
+            });
+        });
+    });
 });
 
