@@ -107,7 +107,7 @@ $(document).ready(function() {
     //Deal with errors
     $(document).ajaxError(function( event, jqxhr, settings, exception ) {
         console.log('error:' + exception);
-        $('.debug').html('error' + exception);
+        $('.debug').html('Error: ' + exception);
     });
 });
 
