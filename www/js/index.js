@@ -90,7 +90,11 @@ $(document).ready(function() {
     $('.container-content').on('submit', 'form', function (e) {
         e.preventDefault();
         var items = $(this).serializeArray();
-        $.post('http://loyolalawtech.org:3000/resources', items, function () {
+        $.post('http://loyolalawtech.org:3000/resources', items)
+        .fail(function (qXHR, textStatus, errorThrown) {
+            console.log('fail' + errorThrown);
+        })
+        .done(function () {
             $.bbq.pushState({ url: 'results-template' });
             $.get('http://loyolalawtech.org:3000/resources', function (data) {
                 var source   = $('#results-template').html();
@@ -98,6 +102,11 @@ $(document).ready(function() {
                 $('.container-content').html(template({objects: data}));
             });
         });
+    });
+
+    //Deal with errors
+    $(document).ajaxError(function( event, jqxhr, settings, exception ) {
+        console.log('error:' + exception);
     });
 });
 
