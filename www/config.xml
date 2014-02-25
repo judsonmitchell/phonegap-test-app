@@ -21,10 +21,6 @@
     <preference name="disable-cursor" value="false" />
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
-    <!-- 
-    This should get rid of menu button
-    http://android-developers.blogspot.com/2012/01/say-goodbye-to-menu-button.html
-    -->
     <preference name="android-targetSdkVersion" value="14" />
     <icon src="icon.png" />
     <icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
