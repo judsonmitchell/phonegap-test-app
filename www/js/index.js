@@ -34,7 +34,6 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        alert('ready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -113,7 +112,6 @@ $(document).ready(function() {
 
     //Take photo
     $('.container-content').on('click', '.take-photo', function (e) {
-        alert('clcl');
         capturePhoto();
     });
 });
