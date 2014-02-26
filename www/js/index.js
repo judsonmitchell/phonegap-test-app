@@ -109,5 +109,11 @@ $(document).ready(function() {
         console.log('error:' + exception);
         $('.debug').html('Error: ' + exception);
     });
+
+    //Take photo
+    $('.container-content').on('click', '.take-photo', function (e) {
+        alert('clcl');
+        capturePhoto();
+    });
 });
 

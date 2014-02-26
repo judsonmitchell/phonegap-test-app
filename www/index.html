@@ -48,6 +48,7 @@
                 <li class="active"><a href="entry-template">Main</a></li>
                 <li><a href="second-template">Second</a></li>
                 <li><a href="settings-template">Settings</a></li>
+                <li><a href="picture-template">Picture</a></li>
             </ul>
         </div>
         <div class="container container-content">
@@ -130,9 +131,19 @@
             </div>
         </div>
         </script>
-        <script type="text/javascript" src="phonegap.js"></script>
+        <script id="picture-template" type="text/x-handlebars-template">
+        <div class="panel panel-default">
+            <div class="panel-heading"><a href="#" class="pull-right">Help</a><h4>Take a Picture</h4></div>
+            <div class="panel-body">
+                <p>Take a picture and send it to our server</p>
+                <p><button class="take-photo">Take Photo</button></p>
+            </div>
+        </div>
+        </script>
+        <!-- <script type="text/javascript" src="phonegap.js"></script> -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/photo.js"></script>
         <script type="text/javascript" src="js/jquery.sidr.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <script type="text/javascript" src="js/jquery.touchwipe.min.js"></script>
