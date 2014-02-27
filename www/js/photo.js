@@ -1,14 +1,14 @@
 // Wait for device API libraries to load
 
-//document.addEventListener('deviceready',onDeviceReady,false);
-//
-//var pictureSource, destinationType;
-//// device APIs are available
-//
-//function onDeviceReady() {
-//    pictureSource=navigator.camera.PictureSourceType;
-//    destinationType=navigator.camera.DestinationType;
-//}
+document.addEventListener('deviceready',onDeviceReady,false);
+
+var pictureSource, destinationType;
+// device APIs are available
+
+function onDeviceReady() {
+    pictureSource=navigator.camera.PictureSourceType;
+    destinationType=navigator.camera.DestinationType;
+}
 
 // Called when a photo is successfully retrieved
 function onPhotoDataSuccess(imageData) {
@@ -27,19 +27,19 @@ function onPhotoURISuccess(imageURI) {
 function capturePhoto() {
     // Take picture using device camera and retrieve image as base64-encoded string
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-    destinationType: app.destinationType.DATA_URL });
+    destinationType: destinationType.DATA_URL });
 }
 
 function capturePhotoEdit() {
     // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
     navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 20, allowEdit: true,
-    destinationType: app.destinationType.DATA_URL });
+    destinationType: destinationType.DATA_URL });
 }
 
 function getPhoto(source) {
     // Retrieve image file location from specified source
     navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-    destinationType: app.destinationType.FILE_URI,
+    destinationType: destinationType.FILE_URI,
     sourceType: source });
 }
 
