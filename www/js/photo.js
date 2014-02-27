@@ -18,16 +18,17 @@ function onPhotoDataSuccess(imageData) {
 
     // Get image handle
     //
-    var smallImage = document.getElementById('smallImage');
+    //var smallImage = document.getElementById('smallImage');
 
     // Unhide image elements
     //
-    smallImage.style.display = 'block';
+    //smallImage.style.display = 'block';
 
     // Show the captured photo
     // The in-line CSS rules are used to resize the image
     //
-    smallImage.src = 'data:image/jpeg;base64,' + imageData;
+    //smallImage.src = 'data:image/jpeg;base64,' + imageData;
+    $('#smallImage').attr('src', 'data:image/jpeg;base64,' +imageData).show();
     $('.upload-button').show();
 }
 
@@ -39,16 +40,17 @@ function onPhotoURISuccess(imageURI) {
 
     // Get image handle
     //
-    var largeImage = document.getElementById('largeImage');
+    //var largeImage = document.getElementById('largeImage');
 
     // Unhide image elements
     //
-    largeImage.style.display = 'block';
+    //largeImage.style.display = 'block';
 
     // Show the captured photo
     // The in-line CSS rules are used to resize the image
     //
-    largeImage.src = imageURI;
+    //largeImage.src = imageURI;
+    $('#largeImage').attr('src', imageURI).show();
     $('.upload-button').show();
 }
 
