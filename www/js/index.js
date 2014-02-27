@@ -114,5 +114,10 @@ $(document).ready(function() {
     $('.container-content').on('click', '.take-photo', function (e) {
         capturePhoto();
     });
+    
+
+    $('.container-content').on('click', '.upload-button', function (e) {
+        alert('I will upload');
+    });
 });
 

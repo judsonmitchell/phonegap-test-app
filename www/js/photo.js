@@ -28,6 +28,7 @@ function onPhotoDataSuccess(imageData) {
     // The in-line CSS rules are used to resize the image
     //
     smallImage.src = 'data:image/jpeg;base64,' + imageData;
+    $('.upload-button').show();
 }
 
 // Called when a photo is successfully retrieved
@@ -48,6 +49,7 @@ function onPhotoURISuccess(imageURI) {
     // The in-line CSS rules are used to resize the image
     //
     largeImage.src = imageURI;
+    $('.upload-button').show();
 }
 
 // A button will call this function
