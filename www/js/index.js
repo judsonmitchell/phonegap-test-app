@@ -90,13 +90,13 @@ $(document).ready(function() {
     $('.container-content').on('submit', 'form', function (e) {
         e.preventDefault();
         var items = $(this).serializeArray();
-        $.post('http://loyolalawtech.org:3000/resources', items)
+        $.post('http://loyolalawtech.org:3001/test_app', items)
         .fail(function (qXHR, textStatus, errorThrown) {
             console.log('fail' + errorThrown);
         })
         .done(function () {
             $.bbq.pushState({ url: 'results-template' });
-            $.get('http://loyolalawtech.org:3000/resources', function (data) {
+            $.get('http://loyolalawtech.org:3001/test_app', function (data) {
                 var source   = $('#results-template').html();
                 var template = Handlebars.compile(source);
                 $('.container-content').html(template({objects: data}));
