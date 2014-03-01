@@ -96,10 +96,10 @@ $(document).ready(function() {
         })
         .done(function () {
             $.bbq.pushState({ url: 'results-template' });
-            $.get('http://loyolalawtech.org:3001/test_app', function (data) {
+            $.getJSON('http://loyolalawtech.org:3001/test_app', function (data) {
                 var source   = $('#results-template').html();
                 var template = Handlebars.compile(source);
-                $('.container-content').html(template({objects: data}));
+                $('.container-content').html(template({items: data}));
             });
         });
     });
