@@ -90,9 +90,11 @@ $(document).ready(function() {
     $('.container-content').on('submit', 'form', function (e) {
         e.preventDefault();
         var items = $(this).serializeArray();
+        var submitTime = new Date();
+        items.push({name: 'date', value: submitTime});
         $.post('http://loyolalawtech.org:3001/test_app', items)
         .fail(function (qXHR, textStatus, errorThrown) {
-            console.log('fail' + errorThrown);
+            console.log('fail ' + textStatus + ' ' + errorThrown);
         })
         .done(function () {
             $.bbq.pushState({ url: 'results-template' });
