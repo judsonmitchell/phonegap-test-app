@@ -13,11 +13,10 @@ upload = function (imageURI) {
     //options.params = { // Whatever you populate options.params with, will be available in req.body at the server-side.
     //    'description': 'Uploaded from my phone'
     //};
-    console.log(ft);
     ft.onprogress = function(e) {
         if (e.lengthComputable) {
-            loadingStatus.setPercentage(e.loaded / e.total);
-            $('progress').attr({value:e.loaded,max:e.total});
+            e.percentage(e.loaded / e.total);
+            $('progress').attr({value:e.percentage,max:e.total});
         } else {
           loadingStatus.increment();
         }
