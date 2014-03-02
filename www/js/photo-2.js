@@ -26,7 +26,7 @@ upload = function (imageURI) {
     ft.upload(imageURI, encodeURI(serverURL + '/upload'),
         function (e) {
             $('#upload-status').html('Success!');
-            $('progress').attr({value:'100', max: '100'});
+            $('progress').attr({value:100, max: 100});
         },
         function (e) {
             $('#upload-status').html('Upload failed:' + e.code + ' source ' + e.source + ' target: ' + e.target);
