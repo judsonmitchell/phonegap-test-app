@@ -3,7 +3,6 @@ var serverURL = 'http://loyolalawtech.org:3001', // IMPORTANT: This URL needs to
 
 // Upload image to server
 upload = function (imageURI) {
-    alert('now uploading');
     console.log('uploading');
     var ft = new FileTransfer(),
     options = new FileUploadOptions();
@@ -14,7 +13,7 @@ upload = function (imageURI) {
     options.params = { // Whatever you populate options.params with, will be available in req.body at the server-side.
         'description': 'Uploaded from my phone'
     };
-
+    console.log(ft);
     ft.upload(imageURI, serverURL + '/upload',
         function (e) {
             alert('Upload failed');
