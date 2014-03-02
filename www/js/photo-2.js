@@ -16,6 +16,9 @@ upload = function (imageURI) {
     console.log(ft);
     ft.upload(imageURI, serverURL + '/upload',
         function (e) {
+            alert('success');
+        },
+        function (e) {
             alert('Upload failed');
         }, options);
 },
