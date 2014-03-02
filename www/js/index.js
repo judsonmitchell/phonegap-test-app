@@ -114,12 +114,39 @@ $(document).ready(function() {
 
     //Take photo
     $('.container-content').on('click', '.take-photo', function (e) {
-        capturePhoto();
+        getPhoto(pictureSource.PHOTOLIBRARY);
     });
-    
+        
 
     $('.container-content').on('click', '.upload-button', function (e) {
-        alert('I will upload');
+        var formData = new FormData($('form[name="photo-uploader"]')[0]);
+        $.ajax({
+                url: 'loyolalawtech.org:3001/upload',  //Server script to process data
+                type: 'POST',
+                xhr: function() {  // Custom XMLHttpRequest
+                    var myXhr = $.ajaxSettings.xhr();
+                    if(myXhr.upload){ // Check if upload property exists
+                        myXhr.upload.addEventListener('progress',progressHandlingFunction, false); // For handling the progress of the upload
+                    }
+                    return myXhr;
+                },
+                //Ajax events
+                //beforeSend: beforeSendHandler,
+                //success: completeHandler,
+                //error: errorHandler,
+                // Form data
+                data: formData,
+                //Options to tell jQuery not to process data or worry about content-type.
+                cache: false,
+                contentType: false,
+                processData: false
+            });
     });
+
+    function progressHandlingFunction(e){
+        if(e.lengthComputable){
+            $('progress').attr({value:e.loaded,max:e.total});
+        }
+    }
 });
 
