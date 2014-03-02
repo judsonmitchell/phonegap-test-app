@@ -149,6 +149,9 @@ $(document).ready(function() {
         }
     }
 
-    $('.container-content').on('click', '.camera-btn', takePicture());
+    $('.container-content').on('click', '.camera-btn', function (){
+        alert('now i will take picture');
+        takePicture();
+    });
 });
 
