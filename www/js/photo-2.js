@@ -14,6 +14,14 @@ upload = function (imageURI) {
     //    'description': 'Uploaded from my phone'
     //};
     console.log(ft);
+    ft.onprogress = function(e) {
+        if (e.lengthComputable) {
+            loadingStatus.setPercentage(e.loaded / e.total);
+            $('progress').attr({value:e.loaded,max:e.total});
+        } else {
+          loadingStatus.increment();
+        }
+    };
     ft.upload(imageURI, encodeURI(serverURL + '/upload'),
         function (e) {
             alert('success');
