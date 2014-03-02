@@ -16,6 +16,7 @@ upload = function (imageURI) {
     ft.onprogress = function(e) {
         if (e.lengthComputable) {
             e.percentage(e.loaded / e.total);
+            $('progress').show();
             $('progress').attr({value:e.percentage,max:e.total});
         } else {
           loadingStatus.increment();
