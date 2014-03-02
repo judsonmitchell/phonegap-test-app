@@ -22,6 +22,7 @@
 
         // Take a picture using the camera or select one from the library
         takePicture = function (e) {
+            alert('click');
             var options = {
                 quality: 45,
                 targetWidth: 1000,
@@ -44,6 +45,6 @@
 
         };
 
-    $('.camera-btn').on('click', takePicture);
+    $('.container-content').on('click', '.camera-btn', takePicture());
 
 }());
