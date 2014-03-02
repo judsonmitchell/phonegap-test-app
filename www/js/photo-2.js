@@ -3,6 +3,7 @@ var serverURL = 'http://loyolalawtech.org:3001', // IMPORTANT: This URL needs to
 
 // Upload image to server
 upload = function (imageURI) {
+    $('progress').show();
     console.log('uploading');
     var ft = new FileTransfer(),
     options = new FileUploadOptions();
@@ -16,7 +17,6 @@ upload = function (imageURI) {
     ft.onprogress = function(e) {
         if (e.lengthComputable) {
             e.percentage(e.loaded / e.total);
-            $('progress').show();
             $('progress').attr({value:e.percentage,max:e.total});
         } else {
           loadingStatus.increment();
