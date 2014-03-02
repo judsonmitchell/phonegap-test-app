@@ -24,11 +24,10 @@ upload = function (imageURI) {
     };
     ft.upload(imageURI, encodeURI(serverURL + '/upload'),
         function (e) {
-            alert('success');
+            $('#upload-status').html('Success!');
         },
         function (e) {
-            alert('Upload failed:' + e.code + ' source ' + e.source + ' target: ' + e.target);
-            console.log('Upload failed:' + e.code + ' source ' + e.source + ' target: ' + e.target);
+            $('#upload-status').html('Upload failed:' + e.code + ' source ' + e.source + ' target: ' + e.target);
         }, options);
 },
 
