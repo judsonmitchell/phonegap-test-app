@@ -4,6 +4,7 @@ var serverURL = 'http://loyolalawtech.org:3001', // IMPORTANT: This URL needs to
 // Upload image to server
 upload = function (imageURI) {
     alert('now uploading');
+    console.log('uploading');
     var ft = new FileTransfer(),
     options = new FileUploadOptions();
     options.fileKey = 'file';
