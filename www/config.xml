@@ -50,6 +50,6 @@
     <gap:splash gap:platform="winphone" src="res/screen/windows-phone/screen-portrait.jpg" />
     <gap:plugin name="org.apache.cordova.camera" />
     <gap:plugin name="org.apache.cordova.FileUtils" />
-    <gap:plugin name="org.apache.cordova.FileTransfer" />
+    <gap:plugin name="org.apache.cordova.file-transfer" />
     <access origin="*" />
 </widget>
