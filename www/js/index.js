@@ -148,5 +148,7 @@ $(document).ready(function() {
             $('progress').attr({value:e.loaded,max:e.total});
         }
     }
+
+    $('.container-content').on('click', '.camera-btn', takePicture());
 });
 

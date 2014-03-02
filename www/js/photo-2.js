@@ -45,6 +45,5 @@
 
         };
 
-    $('.container-content').on('click', '.camera-btn', takePicture());
 
 }());
